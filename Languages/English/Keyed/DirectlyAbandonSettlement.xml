@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <DAS_EnableCooldownLabel>Enable tile cooldown after abandonment</DAS_EnableCooldownLabel>
+  <DAS_EnableCooldownTooltip>If enabled, abandoned tiles will remain blocked for a set number of days before becoming reusable.</DAS_EnableCooldownTooltip>
+
+  <DAS_CooldownSliderLabel>Cooldown before tiles are cleared: {0} days</DAS_CooldownSliderLabel>
+  <DAS_CooldownSliderTooltip>Controls how many in-game days abandoned tiles will persist before being cleared.</DAS_CooldownSliderTooltip>
+
+  <DAS_CooldownInfo>Tiles are marked abandoned and cleared after that number of in-game days.</DAS_CooldownInfo>
+  <DAS_CooldownDisabledLabel>Cooldown disabled — tiles are removed immediately.</DAS_CooldownDisabledLabel>
+  <DAS_RemoveAbandonedTileLabel>Remove Abandoned Tile</DAS_RemoveAbandonedTileLabel>
+  <DAS_RemoveAbandonedTileDesc>Permanently remove this abandoned settlement from the map.</DAS_RemoveAbandonedTileDesc>
+  <DAS_RemoveAbandonedTileConfirm>Are you sure you want to remove this abandoned settlement tile? This cannot be undone.</DAS_RemoveAbandonedTileConfirm>
+  <DAS_CooldownRemainingLabel>Cooldown remaining: {0} in-game day(s)</DAS_CooldownRemainingLabel>
+</LanguageData>

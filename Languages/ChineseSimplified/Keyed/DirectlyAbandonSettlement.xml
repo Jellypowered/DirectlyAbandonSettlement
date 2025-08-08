@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <DAS_EnableCooldownLabel>启用废弃据点的冷却时间</DAS_EnableCooldownLabel>
+  <DAS_EnableCooldownTooltip>启用后，废弃的据点将在指定天数后才会被清除，可再次使用。</DAS_EnableCooldownTooltip>
+
+  <DAS_CooldownSliderLabel>清除据点前的冷却时间：{0} 天</DAS_CooldownSliderLabel>
+  <DAS_CooldownSliderTooltip>设置废弃据点在游戏中经过多少天后自动移除。</DAS_CooldownSliderTooltip>
+
+  <DAS_CooldownInfo>据点将在指定天数后自动移除。</DAS_CooldownInfo>
+  <DAS_CooldownDisabledLabel>冷却已禁用 — 据点立即移除。</DAS_CooldownDisabledLabel>
+
+  <DAS_RemoveAbandonedTileLabel>移除废弃据点</DAS_RemoveAbandonedTileLabel>
+  <DAS_RemoveAbandonedTileDesc>从世界地图中永久移除此废弃据点。</DAS_RemoveAbandonedTileDesc>
+  <DAS_RemoveAbandonedTileConfirm>你确定要移除此废弃据点吗？此操作无法撤销。</DAS_RemoveAbandonedTileConfirm>
+  <DAS_CooldownRemainingLabel>剩余冷却时间：{0} 天</DAS_CooldownRemainingLabel>
+</LanguageData>

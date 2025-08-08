@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <DAS_EnableCooldownLabel>放棄後のタイルにクールダウンを有効にする</DAS_EnableCooldownLabel>
+  <DAS_EnableCooldownTooltip>有効にすると、放棄されたタイルは指定された日数が経過するまで再利用できません。</DAS_EnableCooldownTooltip>
+
+  <DAS_CooldownSliderLabel>タイルが解放されるまでのクールダウン: {0} 日</DAS_CooldownSliderLabel>
+  <DAS_CooldownSliderTooltip>放棄されたタイルが削除されるまでのゲーム内日数を設定します。</DAS_CooldownSliderTooltip>
+
+  <DAS_CooldownInfo>指定された日数の経過後にタイルは自動的に削除されます。</DAS_CooldownInfo>
+  <DAS_CooldownDisabledLabel>クールダウン無効 - タイルは即座に削除されます。</DAS_CooldownDisabledLabel>
+
+  <DAS_RemoveAbandonedTileLabel>放棄されたタイルを削除</DAS_RemoveAbandonedTileLabel>
+  <DAS_RemoveAbandonedTileDesc>この放棄された拠点タイルをマップから永久に削除します。</DAS_RemoveAbandonedTileDesc>
+  <DAS_RemoveAbandonedTileConfirm>この放棄された拠点タイルを削除してもよろしいですか？この操作は元に戻せません。</DAS_RemoveAbandonedTileConfirm>
+  <DAS_CooldownRemainingLabel>クールダウン残り: {0} 日</DAS_CooldownRemainingLabel>
+</LanguageData>

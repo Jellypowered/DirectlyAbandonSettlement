@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <DAS_EnableCooldownLabel>Cooldown für aufgegebene Kacheln aktivieren</DAS_EnableCooldownLabel>
+  <DAS_EnableCooldownTooltip>Wenn aktiviert, bleiben aufgegebene Kacheln für eine bestimmte Anzahl von Tagen gesperrt, bevor sie wiederverwendet werden können.</DAS_EnableCooldownTooltip>
+
+  <DAS_CooldownSliderLabel>Cooldown bevor Kacheln gelöscht werden: {0} Tage</DAS_CooldownSliderLabel>
+  <DAS_CooldownSliderTooltip>Legt fest, wie viele Ingame-Tage eine aufgegebene Kachel bestehen bleibt, bevor sie entfernt wird.</DAS_CooldownSliderTooltip>
+
+  <DAS_CooldownInfo>Kacheln werden nach der eingestellten Anzahl von Tagen automatisch entfernt.</DAS_CooldownInfo>
+  <DAS_CooldownDisabledLabel>Cooldown deaktiviert – Kacheln werden sofort entfernt.</DAS_CooldownDisabledLabel>
+
+  <DAS_RemoveAbandonedTileLabel>Aufgegebene Kachel entfernen</DAS_RemoveAbandonedTileLabel>
+  <DAS_RemoveAbandonedTileDesc>Entfernt diese aufgegebene Kachel dauerhaft von der Weltkarte.</DAS_RemoveAbandonedTileDesc>
+  <DAS_RemoveAbandonedTileConfirm>Möchtest du diese aufgegebene Kachel wirklich entfernen? Diese Aktion kann nicht rückgängig gemacht werden.</DAS_RemoveAbandonedTileConfirm>
+  <DAS_CooldownRemainingLabel>Verbleibende Abklingzeit: {0} Tage</DAS_CooldownRemainingLabel>
+</LanguageData>
