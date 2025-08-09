@@ -13,4 +13,5 @@
   <DAS_RemoveAbandonedTileDesc>从世界地图中永久移除此废弃据点。</DAS_RemoveAbandonedTileDesc>
   <DAS_RemoveAbandonedTileConfirm>你确定要移除此废弃据点吗？此操作无法撤销。</DAS_RemoveAbandonedTileConfirm>
   <DAS_CooldownRemainingLabel>剩余冷却时间：{0} 天</DAS_CooldownRemainingLabel>
+  <DAS_CooldownActive>冷却中 — 剩余 {0} 天。</DAS_CooldownActive>
 </LanguageData>

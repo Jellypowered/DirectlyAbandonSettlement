@@ -18,71 +18,50 @@ namespace NoNeedAbandonedSettlement
             foreach (var gizmo in __result)
                 yield return gizmo;
 
-            if (__instance is AbandonedSettlement abandonedSettlement)
+            if (!(__instance is AbandonedSettlement abandonedSettlement))
+                yield break;
+
+            var tracker = Find.World.GetComponent<WorldComponent_TileCooldownTracker>();
+            int ticks = tracker?.GetTicksRemaining(abandonedSettlement.Tile) ?? 0;
+
+            var cmd = new Command_Action
             {
-                var tracker = Find.World.GetComponent<WorldComponent_TileCooldownTracker>();
-                if (tracker?.IsOnCooldown(abandonedSettlement.Tile) != true)
+                defaultLabel = "DAS_RemoveAbandonedTileLabel".Translate(),
+                defaultDesc = "DAS_RemoveAbandonedTileDesc".Translate(),
+                icon = ContentFinder<Texture2D>.Get("UI/Gizmo_RemoveAbandoned"),
+                action = () =>
                 {
-                    yield return new Command_Action
-                    {
-                        defaultLabel = "DAS_RemoveAbandonedTileLabel".Translate(),
-                        defaultDesc = "DAS_RemoveAbandonedTileDesc".Translate(),
-                        icon = ContentFinder<Texture2D>.Get("UI/Gizmo_RemoveAbandoned"),
-                        action = () =>
-                        {
-                            Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
-                                "DAS_RemoveAbandonedTileConfirm".Translate(),
-                                () => AbandonmentUtility.FinalizeRemoveAbandonedTile(abandonedSettlement),
-                                true
-                            ));
-                        }
-                    };
+                    Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
+                        "DAS_RemoveAbandonedTileConfirm".Translate(),
+                        () => AbandonmentUtility.FinalizeRemoveAbandonedTile(abandonedSettlement),
+                        true
+                    ));
                 }
+            };
+
+            if (ticks > 0)
+            {
+                int days = Mathf.CeilToInt(ticks / 60000f);
+                cmd.Disable("DAS_CooldownActive".Translate(days));
             }
+
+            yield return cmd;
         }
     }
 
 
-    [HarmonyPatch(typeof(SettlementAbandonUtility), "TryAbandonViaInterface")]
-    public static class TryAbandonViaInterface_Patch
+
+    [HarmonyPatch(typeof(SettlementAbandonUtility), "Abandon")]
+    [HarmonyPriority(Priority.Last)]
+    public static class SettlementAbandonUtility_Abandon_Postfix
     {
-        public static bool Prefix(MapParent settlement)
+        public static void Postfix(MapParent settlement)
         {
-            Map map = settlement.Map;
+            // Don’t mutate during load/scribe
+            if (Scribe.mode != LoadSaveMode.Inactive || Current.Game == null || Find.World == null) return;
+            if (settlement == null) return;
 
-            if (map == null || map.mapPawns?.AnyColonistSpawned != true)
-            {
-                AbandonmentUtility.FinalizeAbandon(settlement);
-            }
-            else
-            {
-                StringBuilder stringBuilder = new StringBuilder();
-                var pawns = map.mapPawns.PawnsInFaction(Faction.OfPlayer);
-
-                if (pawns.Any())
-                {
-                    stringBuilder.AppendLine("ConfirmAbandonHomeWithColonyPawns".Translate(
-                        string.Join("\n", pawns.Select(p => $"    {p.LabelCap}"))
-                    ));
-                }
-
-                PawnDiedOrDownedThoughtsUtility.BuildMoodThoughtsListString(
-                    map.mapPawns.AllPawns,
-                    PawnDiedOrDownedThoughtsKind.Banished,
-                    stringBuilder,
-                    null,
-                    "\n\n" + "ConfirmAbandonHomeNegativeThoughts_Everyone".Translate(),
-                    "ConfirmAbandonHomeNegativeThoughts"
-                );
-
-                Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
-                    stringBuilder.ToString(),
-                    () => AbandonmentUtility.FinalizeAbandon(settlement),
-                    true
-                ));
-            }
-
-            return false;
+            AbandonmentUtility.ReconcileAfterVanillaAbandon(settlement.Tile);
         }
     }
 

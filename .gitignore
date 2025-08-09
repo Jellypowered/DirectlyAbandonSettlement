@@ -2,6 +2,7 @@
 /*.sln 
 
 # /*/Assemblies
-# /*/Assemblies/*.pdb
+/*/Assemblies/*.pdb
 # /.vscode
 # /Source
+OldDirectlyAbandonSettlement_1.6.zip

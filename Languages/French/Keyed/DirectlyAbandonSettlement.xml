@@ -13,4 +13,5 @@
   <DAS_RemoveAbandonedTileDesc>Supprime définitivement cette colonie abandonnée de la carte du monde.</DAS_RemoveAbandonedTileDesc>
   <DAS_RemoveAbandonedTileConfirm>Voulez-vous vraiment supprimer cette colonie abandonnée ? Cette action est irréversible.</DAS_RemoveAbandonedTileConfirm>
   <DAS_CooldownRemainingLabel>Temps restant avant suppression : {0} jours</DAS_CooldownRemainingLabel>
+  <DAS_CooldownActive>Temps de recharge actif — {0} jour(s) restant(s).</DAS_CooldownActive>
 </LanguageData>

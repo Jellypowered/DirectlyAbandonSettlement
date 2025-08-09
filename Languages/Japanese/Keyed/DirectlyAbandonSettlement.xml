@@ -13,4 +13,5 @@
   <DAS_RemoveAbandonedTileDesc>この放棄された拠点タイルをマップから永久に削除します。</DAS_RemoveAbandonedTileDesc>
   <DAS_RemoveAbandonedTileConfirm>この放棄された拠点タイルを削除してもよろしいですか？この操作は元に戻せません。</DAS_RemoveAbandonedTileConfirm>
   <DAS_CooldownRemainingLabel>クールダウン残り: {0} 日</DAS_CooldownRemainingLabel>
+  <DAS_CooldownActive>クールダウン中 — 残り {0} 日。</DAS_CooldownActive>
 </LanguageData>

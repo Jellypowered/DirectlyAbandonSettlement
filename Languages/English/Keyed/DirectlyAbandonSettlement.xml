@@ -12,4 +12,5 @@
   <DAS_RemoveAbandonedTileDesc>Permanently remove this abandoned settlement from the map.</DAS_RemoveAbandonedTileDesc>
   <DAS_RemoveAbandonedTileConfirm>Are you sure you want to remove this abandoned settlement tile? This cannot be undone.</DAS_RemoveAbandonedTileConfirm>
   <DAS_CooldownRemainingLabel>Cooldown remaining: {0} in-game day(s)</DAS_CooldownRemainingLabel>
+  <DAS_CooldownActive>Cooldown active — {0} day(s) remaining.</DAS_CooldownActive>
 </LanguageData>

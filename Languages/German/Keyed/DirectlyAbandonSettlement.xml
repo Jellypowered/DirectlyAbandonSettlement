@@ -13,4 +13,5 @@
   <DAS_RemoveAbandonedTileDesc>Entfernt diese aufgegebene Kachel dauerhaft von der Weltkarte.</DAS_RemoveAbandonedTileDesc>
   <DAS_RemoveAbandonedTileConfirm>Möchtest du diese aufgegebene Kachel wirklich entfernen? Diese Aktion kann nicht rückgängig gemacht werden.</DAS_RemoveAbandonedTileConfirm>
   <DAS_CooldownRemainingLabel>Verbleibende Abklingzeit: {0} Tage</DAS_CooldownRemainingLabel>
+  <DAS_CooldownActive>Abklingzeit aktiv — noch {0} Tag(e).</DAS_CooldownActive>
 </LanguageData>

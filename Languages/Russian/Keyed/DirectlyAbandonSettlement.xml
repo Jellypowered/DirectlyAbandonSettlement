@@ -13,4 +13,5 @@
   <DAS_RemoveAbandonedTileDesc>Навсегда удалить этот покинутый тайл с карты мира.</DAS_RemoveAbandonedTileDesc>
   <DAS_RemoveAbandonedTileConfirm>Вы уверены, что хотите удалить этот покинутый тайл? Это действие необратимо.</DAS_RemoveAbandonedTileConfirm>
   <DAS_CooldownRemainingLabel>Осталось дней до очистки: {0}</DAS_CooldownRemainingLabel>
+  <DAS_CooldownActive>Перезарядка активна — осталось {0} дн.</DAS_CooldownActive>
 </LanguageData>

@@ -50,8 +50,11 @@ namespace NoNeedAbandonedSettlement
 
         public void RegisterCooldown(int tile)
         {
-            int delayTicks = NNMod.Settings.cooldownDays * 60000;
-            tileCooldownTicks[tile] = Find.TickManager.TicksGame + delayTicks;
+            int days = Mathf.Clamp(NNMod.Settings.cooldownDays, 0, 180);
+            int end = Find.TickManager.TicksGame + days * 60000;
+            int cur;
+            if (!tileCooldownTicks.TryGetValue(tile, out cur) || end > cur)
+                tileCooldownTicks[tile] = end;
         }
 
         public int? GetDaysRemaining(int tile)
