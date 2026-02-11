@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
+  <DAS_AutoRemoveLabel>自动移除已放弃的领地</DAS_AutoRemoveLabel>
+  <DAS_AutoRemoveTooltip>启用后，已放弃的定居点地块将自动移除，无需手动操作。</DAS_AutoRemoveTooltip>
+  <DAS_AutoRemoveRespectCooldownLabel>    遵守冷却期</DAS_AutoRemoveRespectCooldownLabel>
+  <DAS_AutoRemoveRespectCooldownTooltip>如果启用，自动移除将等待冷却期结束后再移除地块。如果禁用，地块将立即移除。</DAS_AutoRemoveRespectCooldownTooltip>
+  
   <DAS_EnableCooldownLabel>启用废弃据点的冷却时间</DAS_EnableCooldownLabel>
   <DAS_EnableCooldownTooltip>启用后，废弃的据点将在指定天数后才会被清除，可再次使用。</DAS_EnableCooldownTooltip>
 

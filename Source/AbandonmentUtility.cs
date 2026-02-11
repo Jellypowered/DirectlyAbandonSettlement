@@ -25,6 +25,28 @@ namespace NoNeedAbandonedSettlement
                 if (settlement.Spawned && !settlement.Destroyed)
                     settlement.Destroy();
 
+                // Auto-remove: handle based on cooldown respect setting
+                if (NNMod.Settings.autoRemoveImmediately)
+                {
+                    if (!NNMod.Settings.autoRemoveRespectCooldown || NNMod.Settings.cooldownDays == 0)
+                    {
+                        // Remove immediately without cooldown
+                        var leftover = Find.WorldObjects.WorldObjectAt<AbandonedSettlement>(tile);
+                        if (leftover != null && leftover.Spawned && !leftover.Destroyed)
+                            leftover.Destroy();
+                        
+                        SoundDefOf.Tick_High.PlayOneShotOnCamera();
+                        if (Prefs.DevMode) Log.Message("[DAS] FinalizeAbandon with auto-remove (immediate) on tile " + tile);
+                        return;
+                    }
+                    else
+                    {
+                        // Respect cooldown - create abandoned tile and let WorldComponent auto-remove it after cooldown
+                        if (Prefs.DevMode) Log.Message("[DAS] FinalizeAbandon with auto-remove (respecting cooldown) on tile " + tile);
+                        // Fall through to cooldown logic below
+                    }
+                }
+
                 if (NNMod.Settings.cooldownDays > 0)
                 {
                     // If another mod already placed their own object, don't add ours; just register cooldown.
@@ -93,6 +115,25 @@ namespace NoNeedAbandonedSettlement
 
             var wo = Find.WorldObjects;
             var marker = wo.WorldObjectAt<AbandonedSettlement>(tile);
+
+            // Auto-remove: handle based on cooldown respect setting
+            if (NNMod.Settings.autoRemoveImmediately)
+            {
+                if (!NNMod.Settings.autoRemoveRespectCooldown || NNMod.Settings.cooldownDays == 0)
+                {
+                    // Remove immediately without cooldown
+                    if (marker != null && marker.Spawned && !marker.Destroyed)
+                        marker.Destroy();
+                    if (Prefs.DevMode) Log.Message("[DAS] ReconcileAfterVanillaAbandon with auto-remove (immediate) on tile " + tile);
+                    return;
+                }
+                else
+                {
+                    // Respect cooldown - let WorldComponent auto-remove after cooldown
+                    if (Prefs.DevMode) Log.Message("[DAS] ReconcileAfterVanillaAbandon with auto-remove (respecting cooldown) on tile " + tile);
+                    // Fall through to cooldown logic below
+                }
+            }
 
             if (NNMod.Settings.cooldownDays > 0)
             {

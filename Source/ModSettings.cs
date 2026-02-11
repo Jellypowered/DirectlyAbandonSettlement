@@ -24,6 +24,23 @@ namespace NoNeedAbandonedSettlement
             bool enableCooldown = Settings.cooldownDays > 0;
 
             listing.CheckboxLabeled(
+                "DAS_AutoRemoveLabel".Translate(),
+                ref Settings.autoRemoveImmediately,
+                "DAS_AutoRemoveTooltip".Translate()
+            );
+
+            if (Settings.autoRemoveImmediately)
+            {
+                listing.CheckboxLabeled(
+                    "DAS_AutoRemoveRespectCooldownLabel".Translate(),
+                    ref Settings.autoRemoveRespectCooldown,
+                    "DAS_AutoRemoveRespectCooldownTooltip".Translate()
+                );
+            }
+
+            listing.Gap();
+
+            listing.CheckboxLabeled(
                 "DAS_EnableCooldownLabel".Translate(),
                 ref enableCooldown,
                 "DAS_EnableCooldownTooltip".Translate()
@@ -66,12 +83,16 @@ namespace NoNeedAbandonedSettlement
     public class NNSettings : ModSettings
     {
         public int cooldownDays = 15;
+        public bool autoRemoveImmediately = false;
+        public bool autoRemoveRespectCooldown = true;
 
 
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref cooldownDays, "cooldownDays", 15);
+            Scribe_Values.Look(ref autoRemoveImmediately, "autoRemoveImmediately", false);
+            Scribe_Values.Look(ref autoRemoveRespectCooldown, "autoRemoveRespectCooldown", true);
         }
     }
 }

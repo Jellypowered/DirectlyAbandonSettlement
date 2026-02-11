@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
+  <DAS_AutoRemoveLabel>放棄されたタイルを自動削除</DAS_AutoRemoveLabel>
+  <DAS_AutoRemoveTooltip>有効にすると、放棄された入植地タイルは手動削除なしで自動的に削除されます。</DAS_AutoRemoveTooltip>
+  <DAS_AutoRemoveRespectCooldownLabel>    クールダウン期間を尊重</DAS_AutoRemoveRespectCooldownLabel>
+  <DAS_AutoRemoveRespectCooldownTooltip>有効にすると、自動削除はクールダウン期間が終了するまで待ってからタイルを削除します。無効にすると、タイルは即座に削除されます。</DAS_AutoRemoveRespectCooldownTooltip>
+  
   <DAS_EnableCooldownLabel>放棄後のタイルにクールダウンを有効にする</DAS_EnableCooldownLabel>
   <DAS_EnableCooldownTooltip>有効にすると、放棄されたタイルは指定された日数が経過するまで再利用できません。</DAS_EnableCooldownTooltip>
 
