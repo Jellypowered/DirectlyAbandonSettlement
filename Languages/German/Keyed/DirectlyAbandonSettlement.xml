@@ -4,7 +4,7 @@
   <DAS_AutoRemoveTooltip>Wenn aktiviert, werden verlassene Siedlungsfelder automatisch entfernt, ohne manuelle Entfernung.</DAS_AutoRemoveTooltip>
   <DAS_AutoRemoveRespectCooldownLabel>    Abklingzeit beachten</DAS_AutoRemoveRespectCooldownLabel>
   <DAS_AutoRemoveRespectCooldownTooltip>Wenn aktiviert, wartet die automatische Entfernung auf das Ablaufen der Abklingzeit, bevor das Feld entfernt wird. Wenn deaktiviert, werden Felder sofort entfernt.</DAS_AutoRemoveRespectCooldownTooltip>
-  
+
   <DAS_EnableCooldownLabel>Cooldown für aufgegebene Kacheln aktivieren</DAS_EnableCooldownLabel>
   <DAS_EnableCooldownTooltip>Wenn aktiviert, bleiben aufgegebene Kacheln für eine bestimmte Anzahl von Tagen gesperrt, bevor sie wiederverwendet werden können.</DAS_EnableCooldownTooltip>
 

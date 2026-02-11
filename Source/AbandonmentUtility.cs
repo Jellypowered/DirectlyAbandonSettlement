@@ -34,7 +34,7 @@ namespace NoNeedAbandonedSettlement
                         var leftover = Find.WorldObjects.WorldObjectAt<AbandonedSettlement>(tile);
                         if (leftover != null && leftover.Spawned && !leftover.Destroyed)
                             leftover.Destroy();
-                        
+
                         SoundDefOf.Tick_High.PlayOneShotOnCamera();
                         if (Prefs.DevMode) Log.Message("[DAS] FinalizeAbandon with auto-remove (immediate) on tile " + tile);
                         return;

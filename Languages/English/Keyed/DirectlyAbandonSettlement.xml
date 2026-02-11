@@ -4,7 +4,7 @@
   <DAS_AutoRemoveTooltip>When enabled, abandoned settlement tiles will be automatically removed without requiring manual removal.</DAS_AutoRemoveTooltip>
   <DAS_AutoRemoveRespectCooldownLabel>    Respect cooldown period</DAS_AutoRemoveRespectCooldownLabel>
   <DAS_AutoRemoveRespectCooldownTooltip>If enabled, auto-removal will wait for the cooldown period to expire before removing the tile. If disabled, tiles are removed immediately.</DAS_AutoRemoveRespectCooldownTooltip>
-  
+
   <DAS_EnableCooldownLabel>Enable tile cooldown after abandonment</DAS_EnableCooldownLabel>
   <DAS_EnableCooldownTooltip>If enabled, abandoned tiles will remain blocked for a set number of days before becoming reusable.</DAS_EnableCooldownTooltip>
 

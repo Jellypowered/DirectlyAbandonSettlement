@@ -4,7 +4,7 @@
   <DAS_AutoRemoveTooltip>Lorsque activé, les tuiles de colonies abandonnées seront automatiquement supprimées sans nécessiter de suppression manuelle.</DAS_AutoRemoveTooltip>
   <DAS_AutoRemoveRespectCooldownLabel>    Respecter la période de recharge</DAS_AutoRemoveRespectCooldownLabel>
   <DAS_AutoRemoveRespectCooldownTooltip>Si activé, la suppression automatique attendra l'expiration de la période de recharge avant de supprimer la tuile. Si désactivé, les tuiles sont supprimées immédiatement.</DAS_AutoRemoveRespectCooldownTooltip>
-  
+
   <DAS_EnableCooldownLabel>Activer le délai de suppression des colonies abandonnées</DAS_EnableCooldownLabel>
   <DAS_EnableCooldownTooltip>Si activé, les colonies abandonnées resteront bloquées pendant un certain nombre de jours avant de pouvoir être réutilisées.</DAS_EnableCooldownTooltip>
 

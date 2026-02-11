@@ -4,7 +4,7 @@
   <DAS_AutoRemoveTooltip>При включении брошенные поселения будут автоматически удалены без необходимости ручного удаления.</DAS_AutoRemoveTooltip>
   <DAS_AutoRemoveRespectCooldownLabel>    Учитывать период восстановления</DAS_AutoRemoveRespectCooldownLabel>
   <DAS_AutoRemoveRespectCooldownTooltip>Если включено, автоматическое удаление будет ждать окончания периода восстановления перед удалением поселения. Если отключено, поселения удаляются немедленно.</DAS_AutoRemoveRespectCooldownTooltip>
-  
+
   <DAS_EnableCooldownLabel>Включить задержку удаления покинутых тайлов</DAS_EnableCooldownLabel>
   <DAS_EnableCooldownTooltip>Если включено, покинутые тайлы будут оставаться заблокированными в течение указанного количества дней, прежде чем их можно будет повторно использовать.</DAS_EnableCooldownTooltip>
 
