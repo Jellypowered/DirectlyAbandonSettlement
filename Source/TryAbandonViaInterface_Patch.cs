@@ -80,4 +80,61 @@ namespace NoNeedAbandonedSettlement
             }
         }
     }
+
+    [HarmonyPatch(typeof(RitualBehaviorWorker_GravshipLaunch), nameof(RitualBehaviorWorker_GravshipLaunch.TryExecuteOn))]
+    [HarmonyPriority(Priority.Last)]
+    public static class RitualBehaviorWorker_GravshipLaunch_TryExecuteOn_DASCompatPatch
+    {
+        private static bool loggedCompatTrigger;
+
+        public static void Postfix(object[] __args)
+        {
+            if (!ModsConfig.IsActive("vanillaexpanded.gravship")) return;
+            if (Scribe.mode != LoadSaveMode.Inactive || Current.Game == null || Find.World == null) return;
+
+            int tile = TryExtractPlayerSettlementTile(__args);
+            if (tile >= 0)
+            {
+                if (Prefs.DevMode && !loggedCompatTrigger)
+                {
+                    LogCompat.Message("[DAS] VGE1 compatibility hook triggered on tile " + tile + ".");
+                    loggedCompatTrigger = true;
+                }
+
+                AbandonmentUtility.ReconcileAfterVanillaAbandon(tile);
+            }
+        }
+
+        private static int TryExtractPlayerSettlementTile(object[] args)
+        {
+            if (args == null) return -1;
+
+            for (int i = 0; i < args.Length; i++)
+            {
+                if (args[i] is MapParent mapParent)
+                {
+                    if (mapParent is Settlement settlement && settlement.Faction == Faction.OfPlayer)
+                        return settlement.Tile;
+
+                    continue;
+                }
+
+                if (args[i] is Map map)
+                {
+                    if (map.Parent is Settlement settlement && settlement.Faction == Faction.OfPlayer)
+                        return settlement.Tile;
+
+                    continue;
+                }
+
+                if (args[i] is TargetInfo target && target.IsValid && target.Map != null)
+                {
+                    if (target.Map.Parent is Settlement settlement && settlement.Faction == Faction.OfPlayer)
+                        return settlement.Tile;
+                }
+            }
+
+            return -1;
+        }
+    }
 }

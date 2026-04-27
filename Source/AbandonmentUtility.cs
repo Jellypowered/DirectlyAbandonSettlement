@@ -36,13 +36,13 @@ namespace NoNeedAbandonedSettlement
                             leftover.Destroy();
 
                         SoundDefOf.Tick_High.PlayOneShotOnCamera();
-                        if (Prefs.DevMode) Log.Message("[DAS] FinalizeAbandon with auto-remove (immediate) on tile " + tile);
+                        if (Prefs.DevMode) LogCompat.Message("[DAS] FinalizeAbandon with auto-remove (immediate) on tile " + tile);
                         return;
                     }
                     else
                     {
                         // Respect cooldown - create abandoned tile and let WorldComponent auto-remove it after cooldown
-                        if (Prefs.DevMode) Log.Message("[DAS] FinalizeAbandon with auto-remove (respecting cooldown) on tile " + tile);
+                        if (Prefs.DevMode) LogCompat.Message("[DAS] FinalizeAbandon with auto-remove (respecting cooldown) on tile " + tile);
                         // Fall through to cooldown logic below
                     }
                 }
@@ -72,7 +72,7 @@ namespace NoNeedAbandonedSettlement
                 }
 
                 SoundDefOf.Tick_High.PlayOneShotOnCamera();
-                if (Prefs.DevMode) Log.Message("[DAS] FinalizeAbandon OK on tile " + tile + " (cooldownDays=" + NNMod.Settings.cooldownDays + ")");
+                if (Prefs.DevMode) LogCompat.Message("[DAS] FinalizeAbandon OK on tile " + tile + " (cooldownDays=" + NNMod.Settings.cooldownDays + ")");
             }
             catch (Exception e)
             {
@@ -102,7 +102,7 @@ namespace NoNeedAbandonedSettlement
                 }
 
                 SoundDefOf.Tick_High.PlayOneShotOnCamera();
-                if (Prefs.DevMode) Log.Message("[DAS] FinalizeRemoveAbandonedTile OK on tile " + tile + " (cooldownDays=" + NNMod.Settings.cooldownDays + ")");
+                if (Prefs.DevMode) LogCompat.Message("[DAS] FinalizeRemoveAbandonedTile OK on tile " + tile + " (cooldownDays=" + NNMod.Settings.cooldownDays + ")");
             }
             catch (Exception e)
             {
@@ -124,13 +124,13 @@ namespace NoNeedAbandonedSettlement
                     // Remove immediately without cooldown
                     if (marker != null && marker.Spawned && !marker.Destroyed)
                         marker.Destroy();
-                    if (Prefs.DevMode) Log.Message("[DAS] ReconcileAfterVanillaAbandon with auto-remove (immediate) on tile " + tile);
+                    if (Prefs.DevMode) LogCompat.Message("[DAS] ReconcileAfterVanillaAbandon with auto-remove (immediate) on tile " + tile);
                     return;
                 }
                 else
                 {
                     // Respect cooldown - let WorldComponent auto-remove after cooldown
-                    if (Prefs.DevMode) Log.Message("[DAS] ReconcileAfterVanillaAbandon with auto-remove (respecting cooldown) on tile " + tile);
+                    if (Prefs.DevMode) LogCompat.Message("[DAS] ReconcileAfterVanillaAbandon with auto-remove (respecting cooldown) on tile " + tile);
                     // Fall through to cooldown logic below
                 }
             }
